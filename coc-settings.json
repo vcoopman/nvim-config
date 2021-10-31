@@ -1,0 +1,15 @@
+{
+  // --------- Snippets ---------- //
+  "snippets.priority": 1,
+  "snippets.autoTrigger": true,
+  "snippets.textmateSnippetsRoots": [ "~/.config/nvim/snippets" ],
+  "snippets.loadFromExtensions": true,
+  "snippets.extends": {
+    "typescriptreact": ["typescript"]
+  },
+
+
+  // --------- Linters stuff ------ //
+  //"tsserver.enableJavascript": false,
+}
+
