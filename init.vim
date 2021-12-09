@@ -58,6 +58,7 @@ let g:vimwiki_list = [{'path': '~/ws/ALMA/vimwiki/', 'path_html': '~/ws/ALMA/vim
 
 set cursorline
 set ruler
+
 " clipboard setting
 set clipboard=unnamedplus
 
