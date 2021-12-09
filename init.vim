@@ -46,8 +46,17 @@ Plug 'tpope/vim-repeat'
 " Icons
 "Plug 'ryanoasis/vim-devicons'
 
+Plug 'vimwiki/vimwiki'
+
 call plug#end()
 
+" vimwiki required settings
+set nocompatible
+filetype plugin on
+syntax on
+let g:vimwiki_list = [{'path': '~/ws/ALMA/vimwiki/', 'path_html': '~/ws/ALMA/vimwiki_html/'}]
+
+set cursorline
 set ruler
 " clipboard setting
 set clipboard=unnamedplus
@@ -58,6 +67,10 @@ let g:coc_global_extensions = [
 	\ 'coc-eslint',
   \ 'coc-snippets',
 	\ 'coc-prettier',
+  \ 'coc-pyright',
+  \ 'coc-sh',
+  \ 'coc-json',
+  \ 'coc-html',
 	\ ]
 
 " Color scheme
