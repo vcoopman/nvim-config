@@ -1,6 +1,7 @@
 call plug#begin(stdpath('data') . '/pluggemd')
 
 Plug 'mhartington/oceanic-next'
+Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
 
 " syntax
@@ -44,11 +45,25 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-repeat'
 
 " Icons
-"Plug 'ryanoasis/vim-devicons'
+"Plug 'vimwiki/vimwiki'Plug 'ryanoasis/vim-devicons'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
-set ruler
+
+" Vim wiki settings
+set nocompatible
+filetype plugin on
+syntax on
+let g:vimwiki_list = [{'path': '~/ws/ALMA/vimwiki/', 'path_html': '~/ws/ALMA/vimwiki_html/'}]
+let g:vimwiki_hl_headers = 1
+let g:vimwiki_hl_cb_checked = 1
+let g:vimwiki_automatic_nested_syntaxes = 1  " Highlight code block with correct syntax
+let g:vimwiki_markdown_link_ext = 1  " Auto append .md extension to links (so that link can be used in md and html)
+let g:vimwiki_table_reduce_last_col = 1  " useless to format last col, this avoid folding
+let g:vimwiki_table_mappings = 0  " I dont remember why
+let g:vimwiki_table_auto_fmt = 1  " Othewise, fome
+
 " clipboard setting
 set clipboard=unnamedplus
 
@@ -62,10 +77,12 @@ let g:coc_global_extensions = [
 
 " Color scheme
 set termguicolors
-colorscheme OceanicNext
+" colorscheme OceanicNext
+colorscheme gruvbox
 
-" Show line number
 set number
+set ruler
+set cursorline
 
 " Tabs have a width of 2, use spaces instead of tab characters
 set expandtab
