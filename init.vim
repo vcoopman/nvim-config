@@ -48,8 +48,9 @@ Plug 'tpope/vim-repeat'
 "Plug 'vimwiki/vimwiki'Plug 'ryanoasis/vim-devicons'
 Plug 'vimwiki/vimwiki'
 
-call plug#end()
+Plug 'vimwiki/vimwiki'
 
+call plug#end()
 
 " Vim wiki settings
 set nocompatible
@@ -73,6 +74,10 @@ let g:coc_global_extensions = [
 	\ 'coc-eslint',
   \ 'coc-snippets',
 	\ 'coc-prettier',
+  \ 'coc-pyright',
+  \ 'coc-sh',
+  \ 'coc-json',
+  \ 'coc-html',
 	\ ]
 
 " Color scheme
