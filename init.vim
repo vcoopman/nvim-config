@@ -55,7 +55,7 @@ call plug#end()
 set nocompatible
 filetype plugin on
 syntax on
-let g:vimwiki_list = [{'path': '~/ws/ALMA/vimwiki/', 'path_html': '~/ws/ALMA/vimwiki_html/'}]
+let g:vimwiki_list = [{'path': '~/ws/ALMA/vimwiki/', 'path_html': '~/ws/ALMA/vimwiki_html/', 'auto_diary_index': 1}]
 let g:vimwiki_hl_headers = 1
 let g:vimwiki_hl_cb_checked = 1
 let g:vimwiki_automatic_nested_syntaxes = 1  " Highlight code block with correct syntax
@@ -79,6 +79,7 @@ let g:coc_global_extensions = [
 set termguicolors
 " colorscheme OceanicNext
 colorscheme gruvbox
+let g:gruvbox_contrast="hard"
 
 set number
 set ruler
