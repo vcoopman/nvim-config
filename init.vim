@@ -1,6 +1,8 @@
 call plug#begin(stdpath('data') . '/pluggemd')
 
 Plug 'mhartington/oceanic-next'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
 
@@ -8,6 +10,7 @@ Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
 " Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " Plug 'norcalli/nvim-colorizer.lua'
+Plug 'sbdchd/neoformat'
 
 " status bar
 Plug 'maximbaz/lightline-ale'
@@ -31,8 +34,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " IDE
 Plug 'editorconfig/editorconfig-vim'
-" Plug 'junegunn/fzf'
-" Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 " Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'mhinz/vim-signify'
@@ -46,8 +49,6 @@ Plug 'tpope/vim-repeat'
 
 " Icons
 "Plug 'vimwiki/vimwiki'Plug 'ryanoasis/vim-devicons'
-Plug 'vimwiki/vimwiki'
-
 Plug 'vimwiki/vimwiki'
 
 call plug#end()
@@ -68,6 +69,25 @@ let g:vimwiki_table_auto_fmt = 1  " Othewise, fome
 " clipboard setting
 set clipboard=unnamedplus
 
+" autopep8
+let g:neoformat_python_autopep8 = {
+            \ 'exe': 'autopep8',
+            \ 'args': ['-s 4', '-E'],
+            \ 'replace': 1,
+            \ 'stdin': 1,
+            \ 'env': ["DEBUG=1"],
+            \ 'valid_exit_codes': [0, 23],
+            \ 'no_append': 1,
+            \ }
+
+let g:neoformat_enabled_python = ['autopep8']
+" Enable alignment
+let g:neoformat_basic_format_align = 1
+" Enable tab to spaces conversion
+let g:neoformat_basic_format_retab = 1
+" Enable trimmming of trailing whitespace
+let g:neoformat_basic_format_trim = 1
+
 " Declare CoC extensions
 let g:coc_global_extensions = [
 	\ 'coc-tsserver',
@@ -83,8 +103,8 @@ let g:coc_global_extensions = [
 " Color scheme
 set termguicolors
 " colorscheme OceanicNext
-colorscheme gruvbox
-let g:gruvbox_contrast="hard"
+colorscheme PaperColor 
+set bg=light
 
 set number
 set ruler
@@ -142,6 +162,37 @@ let g:closetag_shortcut = '>'
 
 " prettier command
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" Fzf
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'Type'],
+  \ 'border':  ['fg', 'Constant'],
+  \ 'prompt':  ['fg', 'Character'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" Bat theme for syntax coloring when viewing files in fzf
+let $BAT_THEME='base16'
+
+nmap <leader>,s :Rg<CR>
+nmap <leader>,f :Files<CR>
+nmap <leader>,d :BLines<CR>
+
+
+
+
 
 " coc
 " coc snippets

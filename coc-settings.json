@@ -2,14 +2,26 @@
   // --------- Snippets ---------- //
   "snippets.priority": 1,
   "snippets.autoTrigger": true,
-  "snippets.textmateSnippetsRoots": [ "~/.config/nvim/snippets" ],
+  "snippets.textmateSnippetsRoots": ["~/.config/nvim/snippets"],
   "snippets.loadFromExtensions": true,
   "snippets.extends": {
     "typescriptreact": ["typescript"]
   },
 
-
   // --------- Linters stuff ------ //
   //"tsserver.enableJavascript": false,
-}
 
+  // --------- CPP stuff ----------- //
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+      "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
+      }
+    }
+  }
+}
