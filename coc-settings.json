@@ -23,5 +23,8 @@
         }
       }
     }
-  }
+  },
+  "snippets.ultisnips.pythonPrompt": false,
+  "java.autobuild.enabled": false,
+  "java.enabled": false,
 }

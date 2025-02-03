@@ -1,5 +1,6 @@
 call plug#begin(stdpath('data') . '/pluggemd')
 
+Plug 'EdenEast/nightfox.nvim'
 Plug 'mhartington/oceanic-next'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'mhinz/vim-startify'
@@ -102,9 +103,7 @@ let g:coc_global_extensions = [
 
 " Color scheme
 set termguicolors
-" colorscheme OceanicNext
-colorscheme PaperColor 
-set bg=light
+colorscheme nordfox 
 
 set number
 set ruler
